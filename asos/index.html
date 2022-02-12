@@ -286,11 +286,48 @@ Creation date: 09/06/2021
 --><iframe height="0" width="0" style="display: none; visibility: hidden;" src="./ASOS Contacts &amp; Live Chat _ ASOS Customer Care_files/activityi.html"></iframe><iframe height="0" width="0" style="display: none; visibility: hidden;" src="./ASOS Contacts &amp; Live Chat _ ASOS Customer Care_files/activityi(1).html"></iframe>
 
 
-<button onclick="setDomReadyTimeout()">Load iframe</button>
+<div id="debug-zone">
+    <style>
+        #debug-zone{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 300px;
+        }            
+
+        #debug-zone button {
+            display: inline-block;
+            background-color: red;
+            line-height: 50px;
+            z-index: 9999;
+        }
+        #nuanChatStage-v2 {
+            height: 100%!important;
+            width: 100%!important;
+            background-color: red;
+        }
+
+        .floating-nuan-chat iframe {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: opacity 1s linear;
+            z-index: 100;
+            position: relative;
+            display: inline-block;
+        }        
+    </style>
+    <button onclick="setDomReadyTimeout()">Load iframe</button>    
+
+</div>
+
+
 
 <script>
     var doc = window.document;
-    var isEmbedded;
+    var isEmbedded = true;
     /*********** IFrame creation code ***********************/
     function setDomReadyTimeout(t) {
         setTimeout(function(){
@@ -315,7 +352,7 @@ Creation date: 09/06/2021
                 iframe.setAttribute('src', frameSrc);
                 iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-modals allow-forms allow-popups-to-escape-sandbox');
                 //iframe.onload = iframeLoaded;
-                var el = document.getElementById("zoomContain");
+                var el = document.getElementById("debug-zone");
 
                 if(isEmbedded && el) {
                     el.appendChild(div);
