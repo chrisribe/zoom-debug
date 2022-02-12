@@ -1,0 +1,2 @@
+(window.sharedJsonP=window.sharedJsonP||[]).push([["style-to-object|0.3.0|de21d"],{"2e2a4":function(n,e,o){var r=o("1bcb8");n.exports=function(n,e){var o,t=null;if(!n||"string"!=typeof n)return t;for(var s,u,a=r(n),f="function"==typeof e,i=0,d=a.length;i<d;i++)s=(o=a[i]).property,u=o.value,f?e(s,u,o):u&&(t||(t={}),t[s]=u);return t}}}]);
+//# sourceMappingURL=style-to-object~0.3.0~de21d.js.map
