@@ -4325,8 +4325,7 @@
                 </div>
             </div>
             <main id="chrome-app-container">
-                
-                <div id="react-root-DEBUG">
+                <div id="react-root">
                     <p>REACT-ROOT Start</p>
                     <div class="app_appLayout">
                         <div class="Main_main Main_hasSidebar Main_margin">
@@ -9720,7 +9719,8 @@ Creation date: 09/06/2021
                     iframe.setAttribute('src', frameSrc);
                     iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-modals allow-forms allow-popups-to-escape-sandbox');
                     //iframe.onload = iframeLoaded;
-                    var el = document.getElementById("nuanMessagingFrame");
+                    //var el = document.getElementById("nuanMessagingFrame");
+                    var el = document.querySelector("#react-root .Main_main");
 
                     if (isEmbedded && el) {
                         el.appendChild(div);
