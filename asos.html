@@ -37,5 +37,54 @@
     <script src="https://chat.asos.com/nuan-c2c.0.0.1.js" async="" data-status="ready"></script>
     <link href="https://chat.asos.com/nuance-c2c-button.0.0.1.css" rel="stylesheet" type="text/css" data-status="ready">
 
+    <button onclick="setDomReadyTimeout()">Load iframe</button>
+    <div id="zoomContain"></div>
+
+    <script>
+        var doc = window.document;
+        var isEmbedded;
+        /*********** IFrame creation code ***********************/
+        function setDomReadyTimeout(t) {
+            setTimeout(function(){
+                var frameSrc = "https://chrisribe.github.io/zoom-debug/";
+                var div = doc.createElement("div") ;
+                div.id = "nuanChatStage-v2";
+                div.classList.add("floating-nuan-chat");
+                div.style.cssText = "z-index:9999999;height:1px;width:1px;" +
+                                    "border-style: none;border-width: 0px;"; 
+                var htmls = ['<iframe title="Chat Window"'];
+                htmls.push(' name="zoom-debug"');
+                htmls.push(' aria-hidden=true');
+                htmls.push(' hidden=true');
+                htmls.push(' scrolling="NO"');
+                htmls.push(' frameborder=0');
+                htmls.push('></iframe>');
+                div.innerHTML = htmls.join("");
+
+                var bdy=doc.body;
+                if (bdy){
+                    var iframe = div.getElementsByTagName("IFRAME")[0] ;
+                    iframe.setAttribute('src', frameSrc);
+                    iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-modals allow-forms allow-popups-to-escape-sandbox');
+                    //iframe.onload = iframeLoaded;
+                    var el = document.getElementById("zoomContain");
+
+                    if(isEmbedded && el) {
+                        el.appendChild(div);
+                        embeddedFrame = true;
+                    } else {
+                        bdy.appendChild(div);
+                    }
+                    
+                    if(bootstrapC2cInstance) { 
+                        bootstrapC2cInstance.setParentElement(div);
+                    }
+                }
+
+                
+
+            }, t || 25);
+        }        
+    </script>
 </body>
 </html>
