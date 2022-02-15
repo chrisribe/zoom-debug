@@ -1,0 +1,19 @@
+/* Fiddler override */
+#nuanChatStage {
+    z-index: 99;
+    height: auto!important;
+    width: 90vw!important;
+    border-style: none!important;
+    border-width: 0px!important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: lightblue;
+}
+#nuanChatStage iframe {
+    display: block;
+    opacity: 1;
+    border: 2px solid red;
+    width: 90%;
+    height: 225px;
+}

@@ -1,0 +1,15 @@
+{
+  "production": false,
+  "apiUrl": "api/ac/v1/",
+  "contentServer": "https://cgwuat.comenity.net",
+  "clientConfigUrl": "api/ngac/cm/v1/clients",
+  "legacySiteUrl": "",
+  "bizrouteheader": "",
+  "cdnUrl": "ac",
+  "stage": false,
+  "authServer": "api/oidc",
+  "oauthClientId": "ngac",
+  "adobeLaunchUrl": "//assets.adobedtm.com/22a5c2057804/53b52bc9a3d3/launch-bb2f9547558c-development.min.js",
+  "analyticsEnabled": true,
+  "targetEnabled": true
+}
