@@ -1,0 +1,6 @@
+input[type='text'],textarea {
+	font-size:1em;
+}
+textarea {
+    background-color: red;
+}
