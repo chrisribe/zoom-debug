@@ -1,5 +1,4 @@
 
-/*
 // https://stackoverflow.com/a/41487632
 document.addEventListener('DOMContentLoaded', (event) => {
 	var tAreas = document.querySelectorAll('textarea');
@@ -16,4 +15,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		});
 	});
 });
-*/
