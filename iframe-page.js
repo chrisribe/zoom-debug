@@ -1,6 +1,19 @@
 
-// https://stackoverflow.com/a/41487632
+
 document.addEventListener('DOMContentLoaded', (event) => {
+	tiggerFocusTextarea(2000);
+});
+
+function tiggerFocusTextarea(delayMs){
+    setTimeout(function(){
+      var tArea = document.querySelector("textarea");
+      console.log(tArea);
+      tArea.focus();
+    }, delayMs); 
+}
+
+// https://stackoverflow.com/a/41487632
+function setAreaMouseDownFocusFontsizeFix(){
 	var tAreas = document.querySelectorAll('textarea');
 	tAreas.forEach(function(tArea, index) {
 		tArea.addEventListener("mousedown", function (e) {
@@ -14,4 +27,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		  console.log('focus fontSize clear');
 		});
 	});
-});
+}
